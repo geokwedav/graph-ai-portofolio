@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Davis | AI for Work & Research Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* USAID / Institutional Color Palette */
+            --usaid-blue: #002F6C;
+            --usaid-red: #BA0C2F;
+            --light-blue: #E8EDF5;
+            --dark-grey: #212121;
+            --medium-grey: #71767a;
+            --border-color: #d6d7d9;
+            --bg-white: #ffffff;
+            --bg-off-white: #f0f0f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background-color: var(--bg-white);
+            color: var(--dark-grey);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--usaid-blue);
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Top Bar & Branding */
+        .top-banner {
+            background-color: var(--usaid-blue);
+            height: 8px;
+            width: 100%;
+        }
+
+        header.site-header {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-text {
+            border-left: 2px solid var(--usaid-red);
+            padding-left: 1rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            font-size: 0.85rem;
+            color: var(--medium-grey);
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--usaid-blue);
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--usaid-red);
+        }
+
+        /* Hero / Welcome */
+        .hero {
+            background-color: var(--light-blue);
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            border-bottom: 4px solid var(--usaid-blue);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #3e3e3e;
+            margin-bottom: 2rem;
+        }
+
+        /* Bento Grid - Institutional Style */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .card-accent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background-color: var(--usaid-blue);
+        }
+
+        .card.red-accent .card-accent {
+            background-color: var(--usaid-red);
+        }
+
+        .col-8 { grid-column: span 8; }
+        .col-4 { grid-column: span 4; }
+        .col-6 { grid-column: span 6; }
+        .col-12 { grid-column: span 12; }
+
+        @media (max-width: 850px) {
+            .col-8, .col-4, .col-6 { grid-column: span 12; }
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--usaid-blue);
+            color: white;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        /* Module Items */
+        .module-list {
+            margin-top: 1.5rem;
+        }
+
+        .module-item {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .module-item:last-child { border: none; }
+
+        .module-item .number {
+            background: var(--light-blue);
+            color: var(--usaid-blue);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        /* Projects Table */
+        .project-row {
+            display: grid;
+            grid-template-columns: 120px 1fr 150px;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            align-items: center;
+        }
+
+        .project-row:hover {
+            background-color: var(--bg-off-white);
+        }
+
+        .project-date {
+            font-weight: 700;
+            color: var(--medium-grey);
+            font-size: 0.9rem;
+        }
+
+        .project-link {
+            color: var(--usaid-blue);
+            text-decoration: underline;
+            font-weight: 700;
+            text-align: right;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--usaid-blue);
+            color: white;
+            padding: 4rem 0;
+            margin-top: 5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        footer h3 {
+            color: white;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer p, footer a {
+            color: #d1d1d1;
+            font-size: 0.9rem;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        footer a:hover { color: white; }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--usaid-red);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="top-banner"></div>
+    
+    <header class="site-header">
+        <div class="container header-flex">
+            <div class="logo-area">
+                <div class="logo-text">
+                    <h1>George Davis</h1>
+                    <span>AI FOR WORK & RESEARCH</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#curriculum">CURRICULUM</a></li>
+                    <li><a href="#submissions">SUBMISSIONS</a></li>
+                    <li><a href="https://www.linkedin.com/in/george-davis-aaaa62219/" target="_blank">LINKEDIN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container hero-content">
+            <h2>Leveraging Generative AI for Institutional Efficiency</h2>
+            <p>Showcasing the intersection of 17 years of World Health Organization administrative expertise and cutting-edge No-Code AI automation.</p>
+            <a href="#submissions" class="btn-primary">View Project Reports</a>
+        </div>
+    </div>
+
+    <main class="container">
+        
+        <section id="about" class="bento-grid">
+            <!-- Experience Card -->
+            <div class="card col-8">
+                <div class="card-accent"></div>
+                <span class="tag">Professional Profile</span>
+                <h3 style="margin-bottom: 1rem;">Bridging Global Health Operations with AI</h3>
+                <p style="margin-bottom: 1rem; color: #444;">
+                    My career at the <strong>World Health Organization</strong> has focused on high-stakes human resources selections, departmental budget tracking, and digital content management. 
+                </p>
+                <p style="color: #444;">
+                    Currently, I am integrating Generative AI (LLMs) into these workflows to enhance accuracy, reduce manual effort, and optimize research dissemination.
+                </p>
+            </div>
+
+            <!-- Fast Stats Card -->
+            <div class="card col-4 red-accent">
+                <div class="card-accent"></div>
+                <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Core Competencies</h3>
+                <ul style="list-style: none; font-size: 0.9rem;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✔ Administrative Support & HR</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✔ AI-Automated Data Analysis</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✔ Budget & Financial Tracking</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">✔ Project Management (UCI Cert.)</li>
+                    <li style="padding: 0.5rem 0;">✔ Multilingual (English/French)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="curriculum" style="margin-bottom: 4rem;">
+            <div class="section-header" style="border-bottom: 2px solid var(--usaid-blue); padding-bottom: 0.5rem; margin-bottom: 2rem;">
+                <h2>Training & Curriculum</h2>
+            </div>
+            
+            <div class="card col-12">
+                <div class="card-accent"></div>
+                <div class="module-list">
+                    <div class="module-item">
+                        <div class="number">01</div>
+                        <div>
+                            <h4 style="color: var(--usaid-blue);">AI for Communication & Outreach</h4>
+                            <p style="font-size: 0.9rem; color: var(--medium-grey);">Generating Markdown, LaTeX, and HTML outputs for research dissemination and simple website deployment.</p>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <div class="number">02</div>
+                        <div>
+                            <h4 style="color: var(--usaid-blue);">Automated Data Analysis</h4>
+                            <p style="font-size: 0.9rem; color: var(--medium-grey);">Handling datasets responsibly with AI to generate financial and operational reports.</p>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <div class="number">03</div>
+                        <div>
+                            <h4 style="color: var(--usaid-blue);">Literature Review & Synthesis</h4>
+                            <p style="font-size: 0.9rem; color: var(--medium-grey);">Accelerating evidence mapping and literature summaries for research productivity.</p>
+                        </div>
+                    </div>
+                    <div class="module-item">
+                        <div class="number">04</div>
+                        <div>
+                            <h4 style="color: var(--usaid-blue);">Agentic Systems & Automation</h4>
+                            <p style="font-size: 0.9rem; color: var(--medium-grey);">Building autonomous AI agents to manage recurring administrative tasks and email responses.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="submissions">
+            <div class="section-header" style="border-bottom: 2px solid var(--usaid-blue); padding-bottom: 0.5rem; margin-bottom: 2rem;">
+                <h2>Project Reports & Artifacts</h2>
+            </div>
+            
+            <div class="project-row">
+                <div class="project-date">JAN 2026</div>
+                <div>
+                    <h4 style="color: var(--usaid-blue);">Week 1: Institutional Portfolio Development</h4>
+                    <p style="font-size: 0.85rem; color: var(--medium-grey);">Creation of this responsive artifact using AI Canvas and clean UI principles.</p>
+                </div>
+                <a href="#" class="project-link">DOWNLOAD PDF</a>
+            </div>
+
+            <div class="project-row">
+                <div class="project-date">FEB 2026</div>
+                <div>
+                    <h4 style="color: var(--usaid-blue);">Week 2: Automated Budget Analysis Tool</h4>
+                    <p style="font-size: 0.85rem; color: var(--medium-grey);">A Python-assisted analysis of department expenditures and selection procedural logs.</p>
+                </div>
+                <a href="#" class="project-link" style="opacity: 0.5; cursor: not-allowed; text-decoration: none;">PENDING</a>
+            </div>
+
+            <div class="project-row">
+                <div class="project-date">MAR 2026</div>
+                <div>
+                    <h4 style="color: var(--usaid-blue);">Capstone: The AI-Admin Assistant</h4>
+                    <p style="font-size: 0.85rem; color: var(--medium-grey);">Integrated custom GPT for selection procedure support and automated decision letter drafting.</p>
+                </div>
+                <a href="#" class="project-link" style="opacity: 0.5; cursor: not-allowed; text-decoration: none;">QUEUE</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h3>George Davis</h3>
+                <p>Specialist in International Administrative Operations and Responsible AI Integration.</p>
+            </div>
+            <div>
+                <h3>Resources</h3>
+                <a href="#">The GRAPH Courses</a>
+                <a href="#">WHO Administrative Guidelines</a>
+                <a href="#">AI Ethics in Research</a>
+            </div>
+            <div>
+                <h3>Connect</h3>
+                <a href="https://www.linkedin.com/in/george-davis-aaaa62219/" target="_blank">LinkedIn Profile</a>
+                <p style="margin-top: 1rem; color: white; font-weight: 700;">Geneva, Switzerland</p>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; font-size: 0.8rem; text-align: center;">
+            This portfolio is a project for the "Generative AI for Work & Research" course. Inspired by the USAID OIG institutional framework.
+        </div>
+    </footer>
+
+</body>
+</html>
