@@ -54,7 +54,7 @@
 
         header.site-header {
             border-bottom: 1px solid var(--border-color);
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             background: white;
             position: sticky;
             top: 0;
@@ -70,7 +70,16 @@
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.25rem;
+        }
+
+        .avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--usaid-blue);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .logo-text {
@@ -170,6 +179,9 @@
 
         @media (max-width: 850px) {
             .col-8, .col-4, .col-6 { grid-column: span 12; }
+            .header-flex { flex-direction: column; gap: 1rem; text-align: center; }
+            .logo-area { flex-direction: column; gap: 0.5rem; }
+            .logo-text { border-left: none; border-top: 2px solid var(--usaid-red); padding: 0.5rem 0 0 0; }
         }
 
         .tag {
@@ -290,6 +302,7 @@
     <header class="site-header">
         <div class="container header-flex">
             <div class="logo-area">
+                <img src="https://github.com/geokwedav/graph-ai-portofolio/blob/main/GD%20PORTRAIT-25MARCH2025.jpg?raw=true" alt="George Davis" class="avatar">
                 <div class="logo-text">
                     <h1>George Davis</h1>
                     <span>AI FOR WORK & RESEARCH</span>
