@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
+            /* USAID / Institutional Color Palette */
             --usaid-blue: #002F6C;
             --usaid-red: #BA0C2F;
             --light-blue: #E8EDF5;
@@ -47,6 +48,7 @@
             padding: 0 1.5rem;
         }
 
+        /* Top Bar & Branding */
         .top-banner {
             background-color: var(--usaid-blue);
             height: 8px;
@@ -121,6 +123,7 @@
             color: var(--usaid-red);
         }
 
+        /* Hero / Welcome */
         .hero {
             background-color: var(--light-blue);
             padding: 4rem 0;
@@ -144,6 +147,7 @@
             margin-bottom: 2rem;
         }
 
+        /* Bento Grid - Institutional Style */
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
@@ -193,7 +197,10 @@
             margin-bottom: 1rem;
         }
 
-        .module-list { margin-top: 1.5rem; }
+        /* Module Items */
+        .module-list {
+            margin-top: 1.5rem;
+        }
 
         .module-item {
             padding: 1rem;
@@ -217,6 +224,7 @@
             flex-shrink: 0;
         }
 
+        /* Projects Table */
         .project-row {
             display: grid;
             grid-template-columns: 120px 1fr 150px;
@@ -225,7 +233,9 @@
             align-items: center;
         }
 
-        .project-row:hover { background-color: var(--bg-off-white); }
+        .project-row:hover {
+            background-color: var(--bg-off-white);
+        }
 
         .project-date {
             font-weight: 700;
@@ -240,25 +250,24 @@
             text-align: right;
         }
 
-        /* Form Styling */
-        .form-section {
+        /* Consultation Section */
+        .consultation-section {
             margin: 4rem 0;
-        }
-
-        .form-container {
-            width: 100%;
-            height: 600px;
+            padding: 2rem;
+            background-color: var(--bg-off-white);
             border: 1px solid var(--border-color);
+        }
+
+        .form-wrapper {
+            display: flex;
+            justify-content: center;
             background: white;
-            padding: 10px;
+            padding: 2rem 1rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
+        /* Footer */
         footer {
             background-color: var(--usaid-blue);
             color: white;
@@ -302,6 +311,7 @@
             font-size: 0.9rem;
             margin-top: 1rem;
         }
+
     </style>
 </head>
 <body>
@@ -456,12 +466,13 @@
             </div>
         </section>
 
-        <section id="contact" class="form-section">
+        <!-- New Consultation Section -->
+        <section id="contact" class="consultation-section">
             <div class="section-header" style="border-bottom: 2px solid var(--usaid-blue); padding-bottom: 0.5rem; margin-bottom: 2rem;">
                 <h2>Contact for Consultation</h2>
             </div>
-            <div class="form-container">
-                <iframe src="https://docs.google.com/spreadsheets/d/1e7p18rBVkRU35Tt8N0dVpFKylYmv1Tc-Damc5a1MITI/edit?usp=sharing"></iframe>
+            <div class="form-wrapper">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdzvXnVV8qJrWvH2ayxsYTTUoWEeJsUgUXCGzn1uPYDtm4erg/viewform?embedded=true" width="640" height="833" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
         </section>
 
