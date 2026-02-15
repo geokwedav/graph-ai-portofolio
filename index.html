@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    
     <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2026/02/08/17/20260208174337-KO61Z63K.js" defer></script>
+    <script src="https://files.bpcontent.cloud/2026/02/08/17/20260208174337-KO61Z63K.js" defer></script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* USAID / Institutional Color Palette */
             --usaid-blue: #002F6C;
             --usaid-red: #BA0C2F;
             --light-blue: #E8EDF5;
@@ -50,7 +47,6 @@
             padding: 0 1.5rem;
         }
 
-        /* Top Bar & Branding */
         .top-banner {
             background-color: var(--usaid-blue);
             height: 8px;
@@ -125,7 +121,6 @@
             color: var(--usaid-red);
         }
 
-        /* Hero / Welcome */
         .hero {
             background-color: var(--light-blue);
             padding: 4rem 0;
@@ -149,7 +144,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Bento Grid - Institutional Style */
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
@@ -179,11 +173,10 @@
 
         .col-8 { grid-column: span 8; }
         .col-4 { grid-column: span 4; }
-        .col-6 { grid-column: span 6; }
         .col-12 { grid-column: span 12; }
 
         @media (max-width: 850px) {
-            .col-8, .col-4, .col-6 { grid-column: span 12; }
+            .col-8, .col-4 { grid-column: span 12; }
             .header-flex { flex-direction: column; gap: 1rem; text-align: center; }
             .logo-area { flex-direction: column; gap: 0.5rem; }
             .logo-text { border-left: none; border-top: 2px solid var(--usaid-red); padding: 0.5rem 0 0 0; }
@@ -200,10 +193,7 @@
             margin-bottom: 1rem;
         }
 
-        /* Module Items */
-        .module-list {
-            margin-top: 1.5rem;
-        }
+        .module-list { margin-top: 1.5rem; }
 
         .module-item {
             padding: 1rem;
@@ -227,7 +217,6 @@
             flex-shrink: 0;
         }
 
-        /* Projects Table */
         .project-row {
             display: grid;
             grid-template-columns: 120px 1fr 150px;
@@ -236,9 +225,7 @@
             align-items: center;
         }
 
-        .project-row:hover {
-            background-color: var(--bg-off-white);
-        }
+        .project-row:hover { background-color: var(--bg-off-white); }
 
         .project-date {
             font-weight: 700;
@@ -253,7 +240,25 @@
             text-align: right;
         }
 
-        /* Footer */
+        /* Form Styling */
+        .form-section {
+            margin: 4rem 0;
+        }
+
+        .form-container {
+            width: 100%;
+            height: 600px;
+            border: 1px solid var(--border-color);
+            background: white;
+            padding: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         footer {
             background-color: var(--usaid-blue);
             color: white;
@@ -297,7 +302,6 @@
             font-size: 0.9rem;
             margin-top: 1rem;
         }
-
     </style>
 </head>
 <body>
@@ -318,6 +322,7 @@
                     <li><a href="#about">ABOUT</a></li>
                     <li><a href="#curriculum">CURRICULUM</a></li>
                     <li><a href="#submissions">SUBMISSIONS</a></li>
+                    <li><a href="#contact">CONSULTATION</a></li>
                     <li><a href="https://www.linkedin.com/in/george-davis-aaaa62219/" target="_blank">LINKEDIN</a></li>
                 </ul>
             </nav>
@@ -448,6 +453,15 @@
                     <p style="font-size: 0.85rem; color: var(--medium-grey);">Integrated custom GPT for selection procedure support and automated decision letter drafting.</p>
                 </div>
                 <a href="#" class="project-link" style="opacity: 0.5; cursor: not-allowed; text-decoration: none;">QUEUE</a>
+            </div>
+        </section>
+
+        <section id="contact" class="form-section">
+            <div class="section-header" style="border-bottom: 2px solid var(--usaid-blue); padding-bottom: 0.5rem; margin-bottom: 2rem;">
+                <h2>Contact for Consultation</h2>
+            </div>
+            <div class="form-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/1e7p18rBVkRU35Tt8N0dVpFKylYmv1Tc-Damc5a1MITI/edit?usp=sharing"></iframe>
             </div>
         </section>
 
